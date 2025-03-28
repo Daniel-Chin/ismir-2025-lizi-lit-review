@@ -1,0 +1,237 @@
+100.000%
+GPT4RoI: Instruction Tuning Large Language Model on Region-of-Interest
+2023
+Visual instruction tuning large language model(LLM) on image-text pairs has
+achieved general-purpose vision-language abilities. However, the lack of
+region-text pairs limits their advancements to fine-grained multimodal
+understanding. In this paper, we propose spatial instruction tuning, which
+introduces the reference to the region-of-interest(RoI) in the instruction.
+Before sending to LLM, the reference is replaced by RoI features and
+interleaved with language embeddings as a sequence. Our model GPT4RoI, trained
+on 7 region-text pair datasets, brings an unprecedented interactive and
+conversational experience compared to previous image-level models. (1)
+Interaction beyond language: Users can interact with our model by both language
+and drawing bounding boxes to flexibly adjust the referring granularity. (2)
+Versatile multimodal abilities: A variety of attribute information within each
+RoI can be mined by GPT4RoI, e.g., color, shape, material, action, etc.
+Furthermore, it can reason about multiple RoIs based on common sense. On the
+Visual Commonsense Reasoning(VCR) dataset, GPT4RoI achieves a remarkable
+accuracy of 81.6%, surpassing all existing models by a significant margin (the
+second place is 75.6%) and almost reaching human-level performance of 85.0%.
+The code and model can be found at https://github.com/jshilong/GPT4RoI.
+
+100.000%
+Visual Position Prompt for MLLM based Visual Grounding
+2025
+Although Multimodal Large Language Models (MLLMs) excel at various
+image-related tasks, they encounter challenges in precisely aligning
+coordinates with spatial information within images, particularly in
+position-aware tasks such as visual grounding. This limitation arises from two
+key factors. First, MLLMs lack explicit spatial references, making it difficult
+to associate textual descriptions with precise image locations. Second, their
+feature extraction processes prioritize global context over fine-grained
+spatial details, leading to weak localization capability. To address this
+issue, we introduce VPP-LLaVA, an MLLM equipped with Visual Position Prompt
+(VPP) to improve its grounding capability. VPP-LLaVA integrates two
+complementary mechanisms. The global VPP overlays learnable, axis-like
+embeddings onto the input image to provide structured spatial cues. The local
+VPP focuses on fine-grained localization by incorporating position-aware
+queries, which suggests probable object locations. We also introduce a VPP-SFT
+dataset with 0.6M samples, consolidating high-quality visual grounding data
+into a compact format for efficient model training. Training on this dataset
+with VPP enhances the model's performance, achieving state-of-the-art results
+on standard grounding benchmarks despite using fewer training samples compared
+to other MLLMs like MiniGPT-v2, which rely on much larger datasets ($\sim$21M
+samples). The code and VPP-SFT dataset will be available at
+https://github.com/WayneTomas/VPP-LLaVA upon acceptance.
+
+99.994%
+PaLM-E: An Embodied Multimodal Language Model
+2023
+Large language models excel at a wide range of complex tasks. However,
+enabling general inference in the real world, e.g., for robotics problems,
+raises the challenge of grounding. We propose embodied language models to
+directly incorporate real-world continuous sensor modalities into language
+models and thereby establish the link between words and percepts. Input to our
+embodied language model are multi-modal sentences that interleave visual,
+continuous state estimation, and textual input encodings. We train these
+encodings end-to-end, in conjunction with a pre-trained large language model,
+for multiple embodied tasks including sequential robotic manipulation planning,
+visual question answering, and captioning. Our evaluations show that PaLM-E, a
+single large embodied multimodal model, can address a variety of embodied
+reasoning tasks, from a variety of observation modalities, on multiple
+embodiments, and further, exhibits positive transfer: the model benefits from
+diverse joint training across internet-scale language, vision, and
+visual-language domains. Our largest model, PaLM-E-562B with 562B parameters,
+in addition to being trained on robotics tasks, is a visual-language generalist
+with state-of-the-art performance on OK-VQA, and retains generalist language
+capabilities with increasing scale.
+
+99.984%
+Large-scale Pre-training for Grounded Video Caption Generation
+2025
+We propose a novel approach for captioning and object grounding in video,
+where the objects in the caption are grounded in the video via temporally dense
+bounding boxes. We introduce the following contributions. First, we present a
+large-scale automatic annotation method that aggregates captions grounded with
+bounding boxes across individual frames into temporally dense and consistent
+bounding box annotations. We apply this approach on the HowTo100M dataset to
+construct a large-scale pre-training dataset, named HowToGround1M. We also
+introduce a Grounded Video Caption Generation model, dubbed GROVE, and
+pre-train the model on HowToGround1M. Second, we introduce a new dataset,
+called iGround, of 3500 videos with manually annotated captions and dense
+spatio-temporally grounded bounding boxes. This allows us to measure progress
+on this challenging problem, as well as to fine-tune our model on this
+small-scale but high-quality data. Third, we demonstrate that our approach
+achieves state-of-the-art results on the proposed iGround dataset compared to a
+number of baselines, as well as on the VidSTG and ActivityNet-Entities
+datasets. We perform extensive ablations that demonstrate the importance of
+pre-training using our automatically annotated HowToGround1M dataset followed
+by fine-tuning on the manually annotated iGround dataset and validate the key
+technical contributions of our model.
+
+99.984%
+Omni-RGPT: Unifying Image and Video Region-level Understanding via Token Marks
+2025
+We present Omni-RGPT, a multimodal large language model designed to
+facilitate region-level comprehension for both images and videos. To achieve
+consistent region representation across spatio-temporal dimensions, we
+introduce Token Mark, a set of tokens highlighting the target regions within
+the visual feature space. These tokens are directly embedded into spatial
+regions using region prompts (e.g., boxes or masks) and simultaneously
+incorporated into the text prompt to specify the target, establishing a direct
+connection between visual and text tokens. To further support robust video
+understanding without requiring tracklets, we introduce an auxiliary task that
+guides Token Mark by leveraging the consistency of the tokens, enabling stable
+region interpretation across the video. Additionally, we introduce a
+large-scale region-level video instruction dataset (RegVID-300k). Omni-RGPT
+achieves state-of-the-art results on image and video-based commonsense
+reasoning benchmarks while showing strong performance in captioning and
+referring expression comprehension tasks.
+
+99.980%
+Ferret: Refer and Ground Anything Anywhere at Any Granularity
+2023
+We introduce Ferret, a new Multimodal Large Language Model (MLLM) capable of
+understanding spatial referring of any shape or granularity within an image and
+accurately grounding open-vocabulary descriptions. To unify referring and
+grounding in the LLM paradigm, Ferret employs a novel and powerful hybrid
+region representation that integrates discrete coordinates and continuous
+features jointly to represent a region in the image. To extract the continuous
+features of versatile regions, we propose a spatial-aware visual sampler, adept
+at handling varying sparsity across different shapes. Consequently, Ferret can
+accept diverse region inputs, such as points, bounding boxes, and free-form
+shapes. To bolster the desired capability of Ferret, we curate GRIT, a
+comprehensive refer-and-ground instruction tuning dataset including 1.1M
+samples that contain rich hierarchical spatial knowledge, with 95K hard
+negative data to promote model robustness. The resulting model not only
+achieves superior performance in classical referring and grounding tasks, but
+also greatly outperforms existing MLLMs in region-based and
+localization-demanded multimodal chatting. Our evaluations also reveal a
+significantly improved capability of describing image details and a remarkable
+alleviation in object hallucination. Code and data will be available at
+https://github.com/apple/ml-ferret
+
+99.966%
+GLIPv2: Unifying Localization and Vision-Language Understanding
+2022
+We present GLIPv2, a grounded VL understanding model, that serves both
+localization tasks (e.g., object detection, instance segmentation) and
+Vision-Language (VL) understanding tasks (e.g., VQA, image captioning). GLIPv2
+elegantly unifies localization pre-training and Vision-Language Pre-training
+(VLP) with three pre-training tasks: phrase grounding as a VL reformulation of
+the detection task, region-word contrastive learning as a novel region-word
+level contrastive learning task, and the masked language modeling. This
+unification not only simplifies the previous multi-stage VLP procedure but also
+achieves mutual benefits between localization and understanding tasks.
+Experimental results show that a single GLIPv2 model (all model weights are
+shared) achieves near SoTA performance on various localization and
+understanding tasks. The model also shows (1) strong zero-shot and few-shot
+adaption performance on open-vocabulary object detection tasks and (2) superior
+grounding capability on VL understanding tasks. Code will be released at
+https://github.com/microsoft/GLIP.
+
+99.807%
+Qwen-VL: A Versatile Vision-Language Model for Understanding, Localization, Text Reading, and Beyond
+2023
+In this work, we introduce the Qwen-VL series, a set of large-scale
+vision-language models (LVLMs) designed to perceive and understand both texts
+and images. Starting from the Qwen-LM as a foundation, we endow it with visual
+capacity by the meticulously designed (i) visual receptor, (ii) input-output
+interface, (iii) 3-stage training pipeline, and (iv) multilingual multimodal
+cleaned corpus. Beyond the conventional image description and
+question-answering, we implement the grounding and text-reading ability of
+Qwen-VLs by aligning image-caption-box tuples. The resulting models, including
+Qwen-VL and Qwen-VL-Chat, set new records for generalist models under similar
+model scales on a broad range of visual-centric benchmarks (e.g., image
+captioning, question answering, visual grounding) and different settings (e.g.,
+zero-shot, few-shot). Moreover, on real-world dialog benchmarks, our
+instruction-tuned Qwen-VL-Chat also demonstrates superiority compared to
+existing vision-language chatbots. Code, demo and models are available at
+https://github.com/QwenLM/Qwen-VL.
+
+98.594%
+Sa2VA: Marrying SAM2 with LLaVA for Dense Grounded Understanding of Images and Videos
+2025
+This work presents Sa2VA, the first unified model for dense grounded
+understanding of both images and videos. Unlike existing multi-modal large
+language models, which are often limited to specific modalities and tasks,
+Sa2VA supports a wide range of image and video tasks, including referring
+segmentation and conversation, with minimal one-shot instruction tuning. Sa2VA
+combines SAM-2, a foundation video segmentation model, with LLaVA, an advanced
+vision-language model, and unifies text, image, and video into a shared LLM
+token space. Using the LLM, Sa2VA generates instruction tokens that guide SAM-2
+in producing precise masks, enabling a grounded, multi-modal understanding of
+both static and dynamic visual content. Additionally, we introduce Ref-SAV, an
+auto-labeled dataset containing over 72k object expressions in complex video
+scenes, designed to boost model performance. We also manually validate 2k video
+objects in the Ref-SAV datasets to benchmark referring video object
+segmentation in complex environments. Experiments show that Sa2VA achieves
+state-of-the-art across multiple tasks, particularly in referring video object
+segmentation, highlighting its potential for complex real-world applications.
+
+97.702%
+Magma: A Foundation Model for Multimodal AI Agents
+2025
+We present Magma, a foundation model that serves multimodal AI agentic tasks
+in both the digital and physical worlds. Magma is a significant extension of
+vision-language (VL) models in that it not only retains the VL understanding
+ability (verbal intelligence) of the latter, but is also equipped with the
+ability to plan and act in the visual-spatial world (spatial-temporal
+intelligence) and complete agentic tasks ranging from UI navigation to robot
+manipulation. To endow the agentic capabilities, Magma is pretrained on large
+amounts of heterogeneous datasets spanning from images, videos to robotics
+data, where the actionable visual objects (e.g., clickable buttons in GUI) in
+images are labeled by Set-of-Mark (SoM) for action grounding, and the object
+movements (e.g., the trace of human hands or robotic arms) in videos are
+labeled by Trace-of-Mark (ToM) for action planning. Extensive experiments show
+that SoM and ToM reach great synergy and facilitate the acquisition of
+spatial-temporal intelligence for our Magma model, which is fundamental to a
+wide range of tasks as shown in Fig.1. In particular, Magma creates new
+state-of-the-art results on UI navigation and robotic manipulation tasks,
+outperforming previous models that are specifically tailored to these tasks. On
+image and video-related multimodal tasks, Magma also compares favorably to
+popular large multimodal models that are trained on much larger datasets. We
+make our model and code public for reproducibility at
+https://microsoft.github.io/Magma.
+
+93.991%
+Grounded Language-Image Pre-training
+2021
+This paper presents a grounded language-image pre-training (GLIP) model for
+learning object-level, language-aware, and semantic-rich visual
+representations. GLIP unifies object detection and phrase grounding for
+pre-training. The unification brings two benefits: 1) it allows GLIP to learn
+from both detection and grounding data to improve both tasks and bootstrap a
+good grounding model; 2) GLIP can leverage massive image-text pairs by
+generating grounding boxes in a self-training fashion, making the learned
+representation semantic-rich. In our experiments, we pre-train GLIP on 27M
+grounding data, including 3M human-annotated and 24M web-crawled image-text
+pairs. The learned representations demonstrate strong zero-shot and few-shot
+transferability to various object-level recognition tasks. 1) When directly
+evaluated on COCO and LVIS (without seeing any images in COCO during
+pre-training), GLIP achieves 49.8 AP and 26.9 AP, respectively, surpassing many
+supervised baselines. 2) After fine-tuned on COCO, GLIP achieves 60.8 AP on val
+and 61.5 AP on test-dev, surpassing prior SoTA. 3) When transferred to 13
+downstream object detection tasks, a 1-shot GLIP rivals with a fully-supervised
+Dynamic Head. Code is released at https://github.com/microsoft/GLIP.

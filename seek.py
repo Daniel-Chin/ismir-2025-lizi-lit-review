@@ -16,11 +16,13 @@ from load_key import loadKey
 STAGES = ['understanding', 'grounding']
 
 def main(api_key: str):
-    seed_papers = {
-        'MU-LLaMA': 'arXiv:2308.11276', 
-        'LLark': 'arXiv:2310.07160', 
-        'Kosmos-2': 'arXiv:2306.14824', 
-    }
+    print('main()...')
+
+    seed_papers = [
+        ('MU-LLaMA', 'arXiv:2308.11276', 40, 1), 
+        ('LLark',    'arXiv:2310.07160', 40, 1), 
+        ('Kosmos-2', 'arXiv:2306.14824', 80, 0), 
+    ]
 
     def prompt(stage: str):
         return f'''
@@ -43,14 +45,18 @@ Does the above paper fit the criterion? Answer "Yes" or "No", using exactly one 
     scholarApi = sa.ScholarAPI(timedelta(days=1))
 
     all_impactful = []
-    for desc, paper_id in seed_papers.items():
+    for desc, paper_id, cites_per_year_threshold, grace_period in seed_papers:
         for neighborType in sa.NeighborType:
             papers = scholarApi.getPaperNeighbors(neighborType, paper_id, fields=[
                 sa.PAPERID, sa.TITLE, sa.ABSTRACT, sa.CITATIONCOUNT, sa.YEAR, 
                 sa.EXTERNALIDS, 
-            ], limit=500)
+            ], limit=1000)
             print('# of', neighborType.value, desc, ':', len(papers))
-            impactful = [*filterByImpact(papers, cites_per_year_threshold=40)]
+            impactful = [*filterByImpact(
+                papers, 
+                cites_per_year_threshold=cites_per_year_threshold, 
+                grace_period=grace_period,
+            )]
             print(f'impactful % = {len(impactful) / len(papers):.0%}')
             all_impactful.append(impactful)
     

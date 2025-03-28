@@ -1,0 +1,484 @@
+100.000%
+MERT: Acoustic Music Understanding Model with Large-Scale Self-supervised Training
+2023
+Self-supervised learning (SSL) has recently emerged as a promising paradigm
+for training generalisable models on large-scale data in the fields of vision,
+text, and speech. Although SSL has been proven effective in speech and audio,
+its application to music audio has yet to be thoroughly explored. This is
+partially due to the distinctive challenges associated with modelling musical
+knowledge, particularly tonal and pitched characteristics of music. To address
+this research gap, we propose an acoustic Music undERstanding model with
+large-scale self-supervised Training (MERT), which incorporates teacher models
+to provide pseudo labels in the masked language modelling (MLM) style acoustic
+pre-training. In our exploration, we identified an effective combination of
+teacher models, which outperforms conventional speech and audio approaches in
+terms of performance. This combination includes an acoustic teacher based on
+Residual Vector Quantisation - Variational AutoEncoder (RVQ-VAE) and a musical
+teacher based on the Constant-Q Transform (CQT). Furthermore, we explore a wide
+range of settings to overcome the instability in acoustic language model
+pre-training, which allows our designed paradigm to scale from 95M to 330M
+parameters. Experimental results indicate that our model can generalise and
+perform well on 14 music understanding tasks and attain state-of-the-art (SOTA)
+overall scores.
+
+100.000%
+DeepResonance: Enhancing Multimodal Music Understanding via Music-centric Multi-way Instruction Tuning
+2025
+Recent advancements in music large language models (LLMs) have significantly
+improved music understanding tasks, which involve the model's ability to
+analyze and interpret various musical elements. These improvements primarily
+focused on integrating both music and text inputs. However, the potential of
+incorporating additional modalities such as images, videos and textual music
+features to enhance music understanding remains unexplored. To bridge this gap,
+we propose DeepResonance, a multimodal music understanding LLM fine-tuned via
+multi-way instruction tuning with multi-way aligned music, text, image, and
+video data. To this end, we construct Music4way-MI2T, Music4way-MV2T, and
+Music4way-Any2T, three 4-way training and evaluation datasets designed to
+enable DeepResonance to integrate both visual and textual music feature
+content. We also introduce multi-sampled ImageBind embeddings and a
+pre-alignment Transformer to enhance modality fusion prior to input into text
+LLMs, tailoring DeepResonance for multi-way instruction tuning. Our model
+achieves state-of-the-art performances across six music understanding tasks,
+highlighting the benefits of the auxiliary modalities and the structural
+superiority of DeepResonance. We plan to open-source the models and the newly
+constructed datasets.
+
+100.000%
+Music Understanding LLaMA: Advancing Text-to-Music Generation with Question Answering and Captioning
+2023
+Text-to-music generation (T2M-Gen) faces a major obstacle due to the scarcity
+of large-scale publicly available music datasets with natural language
+captions. To address this, we propose the Music Understanding LLaMA (MU-LLaMA),
+capable of answering music-related questions and generating captions for music
+files. Our model utilizes audio representations from a pretrained MERT model to
+extract music features. However, obtaining a suitable dataset for training the
+MU-LLaMA model remains challenging, as existing publicly accessible audio
+question answering datasets lack the necessary depth for open-ended music
+question answering. To fill this gap, we present a methodology for generating
+question-answer pairs from existing audio captioning datasets and introduce the
+MusicQA Dataset designed for answering open-ended music-related questions. The
+experiments demonstrate that the proposed MU-LLaMA model, trained on our
+designed MusicQA dataset, achieves outstanding performance in both music
+question answering and music caption generation across various metrics,
+outperforming current state-of-the-art (SOTA) models in both fields and
+offering a promising advancement in the T2M-Gen research field.
+
+100.000%
+FUTGA: Towards Fine-grained Music Understanding through Temporally-enhanced Generative Augmentation
+2024
+Existing music captioning methods are limited to generating concise global
+descriptions of short music clips, which fail to capture fine-grained musical
+characteristics and time-aware musical changes. To address these limitations,
+we propose FUTGA, a model equipped with fined-grained music understanding
+capabilities through learning from generative augmentation with temporal
+compositions. We leverage existing music caption datasets and large language
+models (LLMs) to synthesize fine-grained music captions with structural
+descriptions and time boundaries for full-length songs. Augmented by the
+proposed synthetic dataset, FUTGA is enabled to identify the music's temporal
+changes at key transition points and their musical functions, as well as
+generate detailed descriptions for each music segment. We further introduce a
+full-length music caption dataset generated by FUTGA, as the augmentation of
+the MusicCaps and the Song Describer datasets. We evaluate the automatically
+generated captions on several downstream tasks, including music generation and
+retrieval. The experiments demonstrate the quality of the generated captions
+and the better performance in various downstream tasks achieved by the proposed
+music captioning approach. Our code and datasets can be found in
+\href{https://huggingface.co/JoshuaW1997/FUTGA}{\textcolor{blue}{https://huggingface.co/JoshuaW1997/FUTGA}}.
+
+100.000%
+NOTA: Multimodal Music Notation Understanding for Visual Large Language Model
+2025
+Symbolic music is represented in two distinct forms: two-dimensional,
+visually intuitive score images, and one-dimensional, standardized text
+annotation sequences. While large language models have shown extraordinary
+potential in music, current research has primarily focused on unimodal symbol
+sequence text. Existing general-domain visual language models still lack the
+ability of music notation understanding. Recognizing this gap, we propose NOTA,
+the first large-scale comprehensive multimodal music notation dataset. It
+consists of 1,019,237 records, from 3 regions of the world, and contains 3
+tasks. Based on the dataset, we trained NotaGPT, a music notation visual large
+language model. Specifically, we involve a pre-alignment training phase for
+cross-modal alignment between the musical notes depicted in music score images
+and their textual representation in ABC notation. Subsequent training phases
+focus on foundational music information extraction, followed by training on
+music notation analysis. Experimental results demonstrate that our NotaGPT-7B
+achieves significant improvement on music understanding, showcasing the
+effectiveness of NOTA and the training pipeline. Our datasets are open-sourced
+at https://huggingface.co/datasets/MYTH-Lab/NOTA-dataset.
+
+100.000%
+MuMu-LLaMA: Multi-modal Music Understanding and Generation via Large Language Models
+2024
+Research on large language models has advanced significantly across text,
+speech, images, and videos. However, multi-modal music understanding and
+generation remain underexplored due to the lack of well-annotated datasets. To
+address this, we introduce a dataset with 167.69 hours of multi-modal data,
+including text, images, videos, and music annotations. Based on this dataset,
+we propose MuMu-LLaMA, a model that leverages pre-trained encoders for music,
+images, and videos. For music generation, we integrate AudioLDM 2 and MusicGen.
+Our evaluation across four tasks--music understanding, text-to-music
+generation, prompt-based music editing, and multi-modal music
+generation--demonstrates that MuMu-LLaMA outperforms state-of-the-art models,
+showing its potential for multi-modal music applications.
+
+100.000%
+LP-MusicCaps: LLM-Based Pseudo Music Captioning
+2023
+Automatic music captioning, which generates natural language descriptions for
+given music tracks, holds significant potential for enhancing the understanding
+and organization of large volumes of musical data. Despite its importance,
+researchers face challenges due to the costly and time-consuming collection
+process of existing music-language datasets, which are limited in size. To
+address this data scarcity issue, we propose the use of large language models
+(LLMs) to artificially generate the description sentences from large-scale tag
+datasets. This results in approximately 2.2M captions paired with 0.5M audio
+clips. We term it Large Language Model based Pseudo music caption dataset,
+shortly, LP-MusicCaps. We conduct a systemic evaluation of the large-scale
+music captioning dataset with various quantitative evaluation metrics used in
+the field of natural language processing as well as human evaluation. In
+addition, we trained a transformer-based music captioning model with the
+dataset and evaluated it under zero-shot and transfer-learning settings. The
+results demonstrate that our proposed approach outperforms the supervised
+baseline model.
+
+100.000%
+LLaQo: Towards a Query-Based Coach in Expressive Music Performance Assessment
+2024
+Research in music understanding has extensively explored composition-level
+attributes such as key, genre, and instrumentation through advanced
+representations, leading to cross-modal applications using large language
+models. However, aspects of musical performance such as stylistic expression
+and technique remain underexplored, along with the potential of using large
+language models to enhance educational outcomes with customized feedback. To
+bridge this gap, we introduce LLaQo, a Large Language Query-based music coach
+that leverages audio language modeling to provide detailed and formative
+assessments of music performances. We also introduce instruction-tuned
+query-response datasets that cover a variety of performance dimensions from
+pitch accuracy to articulation, as well as contextual performance understanding
+(such as difficulty and performance techniques). Utilizing AudioMAE encoder and
+Vicuna-7b LLM backend, our model achieved state-of-the-art (SOTA) results in
+predicting teachers' performance ratings, as well as in identifying piece
+difficulty and playing techniques. Textual responses from LLaQo was moreover
+rated significantly higher compared to other baseline models in a user study
+using audio-text matching. Our proposed model can thus provide informative
+answers to open-ended questions related to musical performance from audio data.
+
+100.000%
+MuChoMusic: Evaluating Music Understanding in Multimodal Audio-Language Models
+2024
+Multimodal models that jointly process audio and language hold great promise
+in audio understanding and are increasingly being adopted in the music domain.
+By allowing users to query via text and obtain information about a given audio
+input, these models have the potential to enable a variety of music
+understanding tasks via language-based interfaces. However, their evaluation
+poses considerable challenges, and it remains unclear how to effectively assess
+their ability to correctly interpret music-related inputs with current methods.
+Motivated by this, we introduce MuChoMusic, a benchmark for evaluating music
+understanding in multimodal language models focused on audio. MuChoMusic
+comprises 1,187 multiple-choice questions, all validated by human annotators,
+on 644 music tracks sourced from two publicly available music datasets, and
+covering a wide variety of genres. Questions in the benchmark are crafted to
+assess knowledge and reasoning abilities across several dimensions that cover
+fundamental musical concepts and their relation to cultural and functional
+contexts. Through the holistic analysis afforded by the benchmark, we evaluate
+five open-source models and identify several pitfalls, including an
+over-reliance on the language modality, pointing to a need for better
+multimodal integration. Data and code are open-sourced.
+
+100.000%
+Audio Dialogues: Dialogues dataset for audio and music understanding
+2024
+Existing datasets for audio understanding primarily focus on single-turn
+interactions (i.e. audio captioning, audio question answering) for describing
+audio in natural language, thus limiting understanding audio via interactive
+dialogue. To address this gap, we introduce Audio Dialogues: a multi-turn
+dialogue dataset containing 163.8k samples for general audio sounds and music.
+In addition to dialogues, Audio Dialogues also has question-answer pairs to
+understand and compare multiple input audios together. Audio Dialogues
+leverages a prompting-based approach and caption annotations from existing
+datasets to generate multi-turn dialogues using a Large Language Model (LLM).
+We evaluate existing audio-augmented large language models on our proposed
+dataset to demonstrate the complexity and applicability of Audio Dialogues. Our
+code for generating the dataset will be made publicly available. Detailed
+prompts and generated dialogues can be found on the demo website
+https://audiodialogues.github.io/.
+
+100.000%
+OpenMU: Your Swiss Army Knife for Music Understanding
+2024
+We present OpenMU-Bench, a large-scale benchmark suite for addressing the
+data scarcity issue in training multimodal language models to understand music.
+To construct OpenMU-Bench, we leveraged existing datasets and bootstrapped new
+annotations. OpenMU-Bench also broadens the scope of music understanding by
+including lyrics understanding and music tool usage. Using OpenMU-Bench, we
+trained our music understanding model, OpenMU, with extensive ablations,
+demonstrating that OpenMU outperforms baseline models such as MU-Llama. Both
+OpenMU and OpenMU-Bench are open-sourced to facilitate future research in music
+understanding and to enhance creative music production efficiency.
+
+100.000%
+AI TrackMate: Finally, Someone Who Will Give Your Music More Than Just "Sounds Great!"
+2024
+The rise of "bedroom producers" has democratized music creation, while
+challenging producers to objectively evaluate their work. To address this, we
+present AI TrackMate, an LLM-based music chatbot designed to provide
+constructive feedback on music productions. By combining LLMs' inherent musical
+knowledge with direct audio track analysis, AI TrackMate offers
+production-specific insights, distinguishing it from text-only approaches. Our
+framework integrates a Music Analysis Module, an LLM-Readable Music Report, and
+Music Production-Oriented Feedback Instruction, creating a plug-and-play,
+training-free system compatible with various LLMs and adaptable to future
+advancements. We demonstrate AI TrackMate's capabilities through an interactive
+web interface and present findings from a pilot study with a music producer. By
+bridging AI capabilities with the needs of independent producers, AI TrackMate
+offers on-demand analytical feedback, potentially supporting the creative
+process and skill development in music production. This system addresses the
+growing demand for objective self-assessment tools in the evolving landscape of
+independent music production.
+
+100.000%
+Pengi: An Audio Language Model for Audio Tasks
+2023
+In the domain of audio processing, Transfer Learning has facilitated the rise
+of Self-Supervised Learning and Zero-Shot Learning techniques. These approaches
+have led to the development of versatile models capable of tackling a wide
+array of tasks, while delivering state-of-the-art performance. However, current
+models inherently lack the capacity to produce the requisite language for
+open-ended tasks, such as Audio Captioning or Audio Question & Answering. We
+introduce Pengi, a novel Audio Language Model that leverages Transfer Learning
+by framing all audio tasks as text-generation tasks. It takes as input, an
+audio recording, and text, and generates free-form text as output. The input
+audio is represented as a sequence of continuous embeddings by an audio
+encoder. A text encoder does the same for the corresponding text input. Both
+sequences are combined as a prefix to prompt a pre-trained frozen language
+model. The unified architecture of Pengi enables open-ended tasks and
+close-ended tasks without any additional fine-tuning or task-specific
+extensions. When evaluated on 22 downstream tasks, our approach yields
+state-of-the-art performance in several of them. Our results show that
+connecting language models with audio models is a major step towards
+general-purpose audio understanding
+
+99.998%
+Listen, Think, and Understand
+2023
+The ability of artificial intelligence (AI) systems to perceive and
+comprehend audio signals is crucial for many applications. Although significant
+progress has been made in this area since the development of AudioSet, most
+existing models are designed to map audio inputs to pre-defined, discrete sound
+label sets. In contrast, humans possess the ability to not only classify sounds
+into general categories, but also to listen to the finer details of the sounds,
+explain the reason for the predictions, think about what the sound infers, and
+understand the scene and what action needs to be taken, if any. Such
+capabilities beyond perception are not yet present in existing audio models. On
+the other hand, modern large language models (LLMs) exhibit emerging reasoning
+ability but they lack audio perception capabilities. Therefore, we ask the
+question: can we build a model that has both audio perception and a reasoning
+ability?
+  In this paper, we propose a new audio foundation model, called LTU (Listen,
+Think, and Understand). To train LTU, we created a new OpenAQA-5M dataset
+consisting of 1.9 million closed-ended and 3.7 million open-ended, diverse
+(audio, question, answer) tuples, and have used an autoregressive training
+framework with a perception-to-understanding curriculum. LTU demonstrates
+strong performance and generalization ability on conventional audio tasks such
+as classification and captioning. More importantly, it exhibits emerging audio
+reasoning and comprehension abilities that are absent in existing audio models.
+To the best of our knowledge, LTU is one of the first multimodal large language
+models that focus on general audio (rather than just speech) understanding.
+
+99.988%
+A Survey of Foundation Models for Music Understanding
+2024
+Music is essential in daily life, fulfilling emotional and entertainment
+needs, and connecting us personally, socially, and culturally. A better
+understanding of music can enhance our emotions, cognitive skills, and cultural
+connections. The rapid advancement of artificial intelligence (AI) has
+introduced new ways to analyze music, aiming to replicate human understanding
+of music and provide related services. While the traditional models focused on
+audio features and simple tasks, the recent development of large language
+models (LLMs) and foundation models (FMs), which excel in various fields by
+integrating semantic information and demonstrating strong reasoning abilities,
+could capture complex musical features and patterns, integrate music with
+language and incorporate rich musical, emotional and psychological knowledge.
+Therefore, they have the potential in handling complex music understanding
+tasks from a semantic perspective, producing outputs closer to human
+perception. This work, to our best knowledge, is one of the early reviews of
+the intersection of AI techniques and music understanding. We investigated,
+analyzed, and tested recent large-scale music foundation models in respect of
+their music comprehension abilities. We also discussed their limitations and
+proposed possible future directions, offering insights for researchers in this
+field.
+
+99.984%
+SALMONN: Towards Generic Hearing Abilities for Large Language Models
+2023
+Hearing is arguably an essential ability of artificial intelligence (AI)
+agents in the physical world, which refers to the perception and understanding
+of general auditory information consisting of at least three types of sounds:
+speech, audio events, and music. In this paper, we propose SALMONN, a speech
+audio language music open neural network, built by integrating a pre-trained
+text-based large language model (LLM) with speech and audio encoders into a
+single multimodal model. SALMONN enables the LLM to directly process and
+understand general audio inputs and achieve competitive performances on a
+number of speech and audio tasks used in training, such as automatic speech
+recognition and translation, auditory-information-based question answering,
+emotion recognition, speaker verification, and music and audio captioning etc.
+SALMONN also has a diverse set of emergent abilities unseen in the training,
+which includes but is not limited to speech translation to untrained languages,
+speech-based slot filling, spoken-query-based question answering, audio-based
+storytelling, and speech audio co-reasoning etc. The presence of cross-modal
+emergent abilities is studied, and a novel few-shot activation tuning approach
+is proposed to activate such abilities. To our knowledge, SALMONN is the first
+model of its type and can be regarded as a step towards AI with generic hearing
+abilities. The source code, model checkpoints and data are available at
+https://github.com/bytedance/SALMONN.
+
+99.807%
+Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities
+2025
+Understanding and reasoning over non-speech sounds and music are crucial for
+both humans and AI agents to interact effectively with their environments. In
+this paper, we introduce Audio Flamingo 2 (AF2), an Audio-Language Model (ALM)
+with advanced audio understanding and reasoning capabilities. AF2 leverages (i)
+a custom CLAP model, (ii) synthetic Audio QA data for fine-grained audio
+reasoning, and (iii) a multi-stage curriculum learning strategy. AF2 achieves
+state-of-the-art performance with only a 3B parameter small language model,
+surpassing large open-source and proprietary models across over 20 benchmarks.
+Next, for the first time, we extend audio understanding to long audio segments
+(30 secs to 5 mins) and propose LongAudio, a large and novel dataset for
+training ALMs on long audio captioning and question-answering tasks.
+Fine-tuning AF2 on LongAudio leads to exceptional performance on our proposed
+LongAudioBench, an expert annotated benchmark for evaluating ALMs on long audio
+understanding capabilities. We conduct extensive ablation studies to confirm
+the efficacy of our approach. Project Website:
+https://research.nvidia.com/labs/adlr/AF2/.
+
+99.807%
+Evaluation of Pretrained Language Models on Music Understanding
+2024
+Music-text multimodal systems have enabled new approaches to Music
+Information Research (MIR) applications such as audio-to-text and text-to-audio
+retrieval, text-based song generation, and music captioning. Despite the
+reported success, little effort has been put into evaluating the musical
+knowledge of Large Language Models (LLM). In this paper, we demonstrate that
+LLMs suffer from 1) prompt sensitivity, 2) inability to model negation (e.g.
+'rock song without guitar'), and 3) sensitivity towards the presence of
+specific words. We quantified these properties as a triplet-based accuracy,
+evaluating the ability to model the relative similarity of labels in a
+hierarchical ontology. We leveraged the Audioset ontology to generate triplets
+consisting of an anchor, a positive (relevant) label, and a negative (less
+relevant) label for the genre and instruments sub-tree. We evaluated the
+triplet-based musical knowledge for six general-purpose Transformer-based
+models. The triplets obtained through this methodology required filtering, as
+some were difficult to judge and therefore relatively uninformative for
+evaluation purposes. Despite the relatively high accuracy reported,
+inconsistencies are evident in all six models, suggesting that off-the-shelf
+LLMs need adaptation to music before use.
+
+99.593%
+Qwen-Audio: Advancing Universal Audio Understanding via Unified Large-Scale Audio-Language Models
+2023
+Recently, instruction-following audio-language models have received broad
+attention for audio interaction with humans. However, the absence of
+pre-trained audio models capable of handling diverse audio types and tasks has
+hindered progress in this field. Consequently, most existing works have only
+been able to support a limited range of interaction capabilities. In this
+paper, we develop the Qwen-Audio model and address this limitation by scaling
+up audio-language pre-training to cover over 30 tasks and various audio types,
+such as human speech, natural sounds, music, and songs, to facilitate universal
+audio understanding abilities. However, directly co-training all tasks and
+datasets can lead to interference issues, as the textual labels associated with
+different datasets exhibit considerable variations due to differences in task
+focus, language, granularity of annotation, and text structure. To overcome the
+one-to-many interference, we carefully design a multi-task training framework
+by conditioning on a sequence of hierarchical tags to the decoder for
+encouraging knowledge sharing and avoiding interference through shared and
+specified tags respectively. Remarkably, Qwen-Audio achieves impressive
+performance across diverse benchmark tasks without requiring any task-specific
+fine-tuning, surpassing its counterparts. Building upon the capabilities of
+Qwen-Audio, we further develop Qwen-Audio-Chat, which allows for input from
+various audios and text inputs, enabling multi-turn dialogues and supporting
+various audio-central scenarios.
+
+92.414%
+Audioclip: Extending Clip to Image, Text and Audio
+2021
+In the past, the rapidly evolving field of sound classification greatly
+benefited from the application of methods from other domains. Today, we observe
+the trend to fuse domain-specific tasks and approaches together, which provides
+the community with new outstanding models.
+  In this work, we present an extension of the CLIP model that handles audio in
+addition to text and images. Our proposed model incorporates the ESResNeXt
+audio-model into the CLIP framework using the AudioSet dataset. Such a
+combination enables the proposed model to perform bimodal and unimodal
+classification and querying, while keeping CLIP's ability to generalize to
+unseen datasets in a zero-shot inference fashion.
+  AudioCLIP achieves new state-of-the-art results in the Environmental Sound
+Classification (ESC) task, out-performing other approaches by reaching
+accuracies of 90.07% on the UrbanSound8K and 97.15% on the ESC-50 datasets.
+Further it sets new baselines in the zero-shot ESC-task on the same datasets
+(68.78% and 69.40%, respectively).
+  Finally, we also assess the cross-modal querying performance of the proposed
+model as well as the influence of full and partial training on the results. For
+the sake of reproducibility, our code is published.
+
+88.080%
+Solla: Towards a Speech-Oriented LLM That Hears Acoustic Context
+2025
+Large Language Models (LLMs) have recently shown remarkable ability to
+process not only text but also multimodal inputs such as speech and audio.
+However, most existing models primarily focus on analyzing input signals using
+text instructions, overlooking scenarios in which speech instructions and audio
+are mixed and serve as inputs to the model. To address these challenges, we
+introduce Solla, a novel framework designed to understand speech-based
+questions and hear the acoustic context concurrently. Solla incorporates an
+audio tagging module to effectively identify and represent audio events, as
+well as an ASR-assisted prediction method to improve comprehension of spoken
+content. To rigorously evaluate Solla and other publicly available models, we
+propose a new benchmark dataset called SA-Eval, which includes three tasks:
+audio event classification, audio captioning, and audio question answering.
+SA-Eval has diverse speech instruction with various speaking styles,
+encompassing two difficulty levels, easy and hard, to capture the range of
+real-world acoustic conditions. Experimental results show that Solla performs
+on par with or outperforms baseline models on both the easy and hard test sets,
+underscoring its effectiveness in jointly understanding speech and audio.
+
+88.080%
+The Music Maestro or The Musically Challenged, A Massive Music Evaluation Benchmark for Large Language Models
+2024
+Benchmark plays a pivotal role in assessing the advancements of large
+language models (LLMs). While numerous benchmarks have been proposed to
+evaluate LLMs' capabilities, there is a notable absence of a dedicated
+benchmark for assessing their musical abilities. To address this gap, we
+present ZIQI-Eval, a comprehensive and large-scale music benchmark specifically
+designed to evaluate the music-related capabilities of LLMs. ZIQI-Eval
+encompasses a wide range of questions, covering 10 major categories and 56
+subcategories, resulting in over 14,000 meticulously curated data entries. By
+leveraging ZIQI-Eval, we conduct a comprehensive evaluation over 16 LLMs to
+evaluate and analyze LLMs' performance in the domain of music. Results indicate
+that all LLMs perform poorly on the ZIQI-Eval benchmark, suggesting significant
+room for improvement in their musical capabilities. With ZIQI-Eval, we aim to
+provide a standardized and robust evaluation framework that facilitates a
+comprehensive assessment of LLMs' music-related abilities. The dataset is
+available at GitHub\footnote{https://github.com/zcli-charlie/ZIQI-Eval} and
+HuggingFace\footnote{https://huggingface.co/datasets/MYTH-Lab/ZIQI-Eval}.
+
+81.757%
+AnyGPT: Unified Multimodal LLM with Discrete Sequence Modeling
+2024
+We introduce AnyGPT, an any-to-any multimodal language model that utilizes
+discrete representations for the unified processing of various modalities,
+including speech, text, images, and music. AnyGPT can be trained stably without
+any alterations to the current large language model (LLM) architecture or
+training paradigms. Instead, it relies exclusively on data-level preprocessing,
+facilitating the seamless integration of new modalities into LLMs, akin to the
+incorporation of new languages. We build a multimodal text-centric dataset for
+multimodal alignment pre-training. Utilizing generative models, we synthesize
+the first large-scale any-to-any multimodal instruction dataset. It consists of
+108k samples of multi-turn conversations that intricately interweave various
+modalities, thus equipping the model to handle arbitrary combinations of
+multimodal inputs and outputs. Experimental results demonstrate that AnyGPT is
+capable of facilitating any-to-any multimodal conversation while achieving
+performance comparable to specialized models across all modalities, proving
+that discrete representations can effectively and conveniently unify multiple
+modalities within a language model. Demos are shown in
+https://junzhan2000.github.io/AnyGPT.github.io/
