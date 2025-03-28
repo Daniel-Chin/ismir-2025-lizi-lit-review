@@ -1,0 +1,13 @@
+[project]
+name = "lizi"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "gpt-lit-reviewer",
+    "tqdm>=4.67.1",
+]
+
+[tool.uv.sources]
+gpt-lit-reviewer = { git = "https://github.com/daniel-chin/gpt-lit-reviewer" }
