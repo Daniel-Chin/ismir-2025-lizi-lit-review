@@ -1,11 +1,15 @@
 STAGES = ['understanding', 'grounding']
 
+ours = [
+    'FiLMu: A Multimodal Music-to-Text Model for Fine-Grained Understanding and Grounding',
+    'We present FiLMu, a multimodal music-to-text framework for fine-grained and segment-level music analysis. While prior models focus on global descriptions, FiLMu introduces timestamp-aligned annotations and a structured HTML-like format that links specific audio segments with natural language. Built on LLaMA3-8B and fine-tuned using LoRA, FiLMu uses a trainable projector to bridge audio and language representations. Our structured data format unifies multiple MIR tasks and exposes fine-grained correspondences between music and text, revealing the potential of large language models for music understanding. FiLMu supports detailed segment-level analysis, comparison across multiple audio sections, and flexible querying of musical attributes within a single framework.', 
+]
+
 papers = {}
 
 papers['understanding'] = r'''
-Papers related
-<papers>
 Music Understanding LLaMA: Advancing Text-to-Music Generation with Question Answering and Captioning
+mullama
 2023
 Text-to-music generation (T2M-Gen) faces a major obstacle due to the scarcity
 of large-scale publicly available music datasets with natural language
@@ -25,10 +29,13 @@ outperforming current state-of-the-art (SOTA) models in both fields and
 offering a promising advancement in the T2M-Gen research field.
 
 LLark: A Multimodal Instruction-Following Language Model for Music
+llark
 2023
 Music has a unique and complex structure which is challenging for both expert humans and existing AI systems to understand, and presents unique challenges relative to other forms of audio. We present LLark, an instruction-tuned multimodal model for \emph{music} understanding. We detail our process for dataset creation, which involves augmenting the annotations of diverse open-source music datasets and converting them to a unified instruction-tuning format. We propose a multimodal architecture for LLark, integrating a pretrained generative model for music with a pretrained language model. In evaluations on three types of tasks (music understanding, captioning, reasoning), we show that LLark matches or outperforms existing baselines in music understanding, and that humans show a high degree of agreement with its responses in captioning and reasoning tasks. LLark is trained entirely from open-source music data and models, and we make our training code available along with the release of this paper. Additional results and audio examples are at this https URL, and our source code is available at this https URL . 
+<comment>LLark cited MU-LLaMA.</comment>
 
 DeepResonance: Enhancing Multimodal Music Understanding via Music-centric Multi-way Instruction Tuning
+mao2025deepresonance
 2025
 Recent advancements in music large language models (LLMs) have significantly
 improved music understanding tasks, which involve the model's ability to
@@ -46,10 +53,10 @@ pre-alignment Transformer to enhance modality fusion prior to input into text
 LLMs, tailoring DeepResonance for multi-way instruction tuning. Our model
 achieves state-of-the-art performances across six music understanding tasks,
 highlighting the benefits of the auxiliary modalities and the structural
-superiority of DeepResonance. We plan to open-source the models and the newly
-constructed datasets.
+superiority of DeepResonance. 
 
 FUTGA: Towards Fine-grained Music Understanding through Temporally-enhanced Generative Augmentation
+wu2024futga
 2024
 Existing music captioning methods are limited to generating concise global
 descriptions of short music clips, which fail to capture fine-grained musical
@@ -67,10 +74,10 @@ the MusicCaps and the Song Describer datasets. We evaluate the automatically
 generated captions on several downstream tasks, including music generation and
 retrieval. The experiments demonstrate the quality of the generated captions
 and the better performance in various downstream tasks achieved by the proposed
-music captioning approach. Our code and datasets can be found in
-\href{https://huggingface.co/JoshuaW1997/FUTGA}{\textcolor{blue}{https://huggingface.co/JoshuaW1997/FUTGA}}.
+music captioning approach. 
 
 Pengi: An Audio Language Model for Audio Tasks
+deshmukh2023pengi
 2023
 In the domain of audio processing, Transfer Learning has facilitated the rise
 of Self-Supervised Learning and Zero-Shot Learning techniques. These approaches
@@ -92,18 +99,22 @@ connecting language models with audio models is a major step towards
 general-purpose audio understanding
 
 SALMONN: Towards Generic Hearing Abilities for Large Language Models
+tang2024salmonn
 2023
-Hearing is arguably an essential ability of artificial intelligence (AI) agents in the physical world, which refers to the perception and understanding of general auditory information consisting of at least three types of sounds: speech, audio events, and music. In this paper, we propose SALMONN, a speech audio language music open neural network, built by integrating a pre-trained text-based large language model (LLM) with speech and audio encoders into a single multimodal model. SALMONN enables the LLM to directly process and understand general audio inputs and achieve competitive performances on a number of speech and audio tasks used in training, such as automatic speech recognition and translation, auditory-information-based question answering, emotion recognition, speaker verification, and music and audio captioning etc. SALMONN also has a diverse set of emergent abilities unseen in the training, which includes but is not limited to speech translation to untrained languages, speech-based slot filling, spoken-query-based question answering, audio-based storytelling, and speech audio co-reasoning etc. The presence of cross-modal emergent abilities is studied, and a novel few-shot activation tuning approach is proposed to activate such abilities. To our knowledge, SALMONN is the first model of its type and can be regarded as a step towards AI with generic hearing abilities. The source code, model checkpoints and data are available at this https URL. 
+Hearing is arguably an essential ability of artificial intelligence (AI) agents in the physical world, which refers to the perception and understanding of general auditory information consisting of at least three types of sounds: speech, audio events, and music. In this paper, we propose SALMONN, a speech audio language music open neural network, built by integrating a pre-trained text-based large language model (LLM) with speech and audio encoders into a single multimodal model. SALMONN enables the LLM to directly process and understand general audio inputs and achieve competitive performances on a number of speech and audio tasks used in training, such as automatic speech recognition and translation, auditory-information-based question answering, emotion recognition, speaker verification, and music and audio captioning etc. SALMONN also has a diverse set of emergent abilities unseen in the training, which includes but is not limited to speech translation to untrained languages, speech-based slot filling, spoken-query-based question answering, audio-based storytelling, and speech audio co-reasoning etc. The presence of cross-modal emergent abilities is studied, and a novel few-shot activation tuning approach is proposed to activate such abilities. To our knowledge, SALMONN is the first model of its type and can be regarded as a step towards AI with generic hearing abilities.
 
 Qwen-Audio: Advancing Universal Audio Understanding via Unified Large-Scale Audio-Language Models
+chu2023qwen
 2023
 Recently, instruction-following audio-language models have received broad attention for audio interaction with humans. However, the absence of pre-trained audio models capable of handling diverse audio types and tasks has hindered progress in this field. Consequently, most existing works have only been able to support a limited range of interaction capabilities. In this paper, we develop the Qwen-Audio model and address this limitation by scaling up audio-language pre-training to cover over 30 tasks and various audio types, such as human speech, natural sounds, music, and songs, to facilitate universal audio understanding abilities. However, directly co-training all tasks and datasets can lead to interference issues, as the textual labels associated with different datasets exhibit considerable variations due to differences in task focus, language, granularity of annotation, and text structure. To overcome the one-to-many interference, we carefully design a multi-task training framework by conditioning on a sequence of hierarchical tags to the decoder for encouraging knowledge sharing and avoiding interference through shared and specified tags respectively. Remarkably, Qwen-Audio achieves impressive performance across diverse benchmark tasks without requiring any task-specific fine-tuning, surpassing its counterparts. Building upon the capabilities of Qwen-Audio, we further develop Qwen-Audio-Chat, which allows for input from various audios and text inputs, enabling multi-turn dialogues and supporting various audio-central scenarios. 
 
 M2UGen: Multi-modal Music Understanding and Generation with the Power of Large Language Models
+liu2023m2ugen
 2024
 The current landscape of research leveraging large language models (LLMs) is experiencing a surge. Many works harness the powerful reasoning capabilities of these models to comprehend various modalities, such as text, speech, images, videos, etc. They also utilize LLMs to understand human intention and generate desired outputs like images, videos, and music. However, research that combines both understanding and generation using LLMs is still limited and in its nascent stage. To address this gap, we introduce a Multi-modal Music Understanding and Generation (M2UGen) framework that integrates LLM's abilities to comprehend and generate music for different modalities. The M2UGen framework is purpose-built to unlock creative potential from diverse sources of inspiration, encompassing music, image, and video through the use of pretrained MERT, ViT, and ViViT models, respectively. To enable music generation, we explore the use of AudioLDM 2 and MusicGen. Bridging multi-modal understanding and music generation is accomplished through the integration of the LLaMA 2 model. Furthermore, we make use of the MU-LLaMA model to generate extensive datasets that support text/image/video-to-music generation, facilitating the training of our M2UGen framework. We conduct a thorough evaluation of our proposed framework. The experimental results demonstrate that our model achieves or surpasses the performance of the current state-of-the-art models. 
 
 A Survey of Foundation Models for Music Understanding
+li2024survey
 2024
 Music is essential in daily life, fulfilling emotional and entertainment
 needs, and connecting us personally, socially, and culturally. A better
@@ -127,6 +138,7 @@ field.
 <comment>I used this during lit review.</comment>
 
 Audio Flamingo 2: An Audio-Language Model with Long-Audio Understanding and Expert Reasoning Abilities
+ghosh2025audio
 2025
 Understanding and reasoning over non-speech sounds and music are crucial for
 both humans and AI agents to interact effectively with their environments. In
@@ -142,10 +154,10 @@ training ALMs on long audio captioning and question-answering tasks.
 Fine-tuning AF2 on LongAudio leads to exceptional performance on our proposed
 LongAudioBench, an expert annotated benchmark for evaluating ALMs on long audio
 understanding capabilities. We conduct extensive ablation studies to confirm
-the efficacy of our approach. Project Website:
-https://research.nvidia.com/labs/adlr/AF2/.
+the efficacy of our approach.
 
 Solla: Towards a Speech-Oriented LLM That Hears Acoustic Context
+ao2025solla
 2025
 Large Language Models (LLMs) have recently shown remarkable ability to
 process not only text but also multimodal inputs such as speech and audio.
@@ -168,14 +180,16 @@ underscoring its effectiveness in jointly understanding speech and audio.
 "In contrast to [most existing works], SOLLA distinguishes itself by emphasizing both the understanding of audio content and the processing of speech instructions"
 Method-wise, it looks like just an input adaptor to the text LLM plus some audio tagging domain knowledge.
 </comment>
-'''
+'''.strip()
 
 papers['grounding'] = r'''
 Kosmos-2: Grounding Multimodal Large Language Models to the World
+kosmos2
 2023
-We introduce Kosmos-2, a Multimodal Large Language Model (MLLM), enabling new capabilities of perceiving object descriptions (e.g., bounding boxes) and grounding text to the visual world. Specifically, we represent refer expressions as links in Markdown, i.e., ``[text span](bounding boxes)'', where object descriptions are sequences of location tokens. Together with multimodal corpora, we construct large-scale data of grounded image-text pairs (called GrIT) to train the model. In addition to the existing capabilities of MLLMs (e.g., perceiving general modalities, following instructions, and performing in-context learning), Kosmos-2 integrates the grounding capability into downstream applications. We evaluate Kosmos-2 on a wide range of tasks, including (i) multimodal grounding, such as referring expression comprehension, and phrase grounding, (ii) multimodal referring, such as referring expression generation, (iii) perception-language tasks, and (iv) language understanding and generation. This work lays out the foundation for the development of Embodiment AI and sheds light on the big convergence of language, multimodal perception, action, and world modeling, which is a key step toward artificial general intelligence. Code and pretrained models are available at this https URL. 
+We introduce Kosmos-2, a Multimodal Large Language Model (MLLM), enabling new capabilities of perceiving object descriptions (e.g., bounding boxes) and grounding text to the visual world. Specifically, we represent refer expressions as links in Markdown, i.e., ``[text span](bounding boxes)'', where object descriptions are sequences of location tokens. Together with multimodal corpora, we construct large-scale data of grounded image-text pairs (called GrIT) to train the model. In addition to the existing capabilities of MLLMs (e.g., perceiving general modalities, following instructions, and performing in-context learning), Kosmos-2 integrates the grounding capability into downstream applications. We evaluate Kosmos-2 on a wide range of tasks, including (i) multimodal grounding, such as referring expression comprehension, and phrase grounding, (ii) multimodal referring, such as referring expression generation, (iii) perception-language tasks, and (iv) language understanding and generation. This work lays out the foundation for the development of Embodiment AI and sheds light on the big convergence of language, multimodal perception, action, and world modeling, which is a key step toward artificial general intelligence.
 
 Visual Position Prompt for MLLM based Visual Grounding
+tang2025visual
 2025
 Although Multimodal Large Language Models (MLLMs) excel at various
 image-related tasks, they encounter challenges in precisely aligning
@@ -199,6 +213,7 @@ to other MLLMs like MiniGPT-v2, which rely on much larger datasets ($\sim$21M
 samples).
 
 Large-scale Pre-training for Grounded Video Caption Generation
+kazakos2025large
 2025
 We propose a novel approach for captioning and object grounding in video,
 where the objects in the caption are grounded in the video via temporally dense
@@ -221,6 +236,7 @@ by fine-tuning on the manually annotated iGround dataset and validate the key
 technical contributions of our model.
 
 Omni-RGPT: Unifying Image and Video Region-level Understanding via Token Marks
+heo2025omni
 2025
 We present Omni-RGPT, a multimodal large language model designed to
 facilitate region-level comprehension for both images and videos. To achieve
@@ -239,6 +255,7 @@ reasoning benchmarks while showing strong performance in captioning and
 referring expression comprehension tasks.
 
 Ferret: Refer and Ground Anything Anywhere at Any Granularity
+you2024ferret
 2023
 We introduce Ferret, a new Multimodal Large Language Model (MLLM) capable of
 understanding spatial referring of any shape or granularity within an image and
@@ -260,6 +277,7 @@ significantly improved capability of describing image details and a remarkable
 alleviation in object hallucination.
 
 Qwen-VL: A Versatile Vision-Language Model for Understanding, Localization, Text Reading, and Beyond
+bai2023qwen
 2023
 In this work, we introduce the Qwen-VL series, a set of large-scale
 vision-language models (LVLMs) designed to perceive and understand both texts
@@ -275,4 +293,58 @@ captioning, question answering, visual grounding) and different settings (e.g.,
 zero-shot, few-shot). Moreover, on real-world dialog benchmarks, our
 instruction-tuned Qwen-VL-Chat also demonstrates superiority compared to
 existing vision-language chatbots.
+'''.strip()
+
+STEP_BY_STEP_GUIDE = (
 '''
+Follow this plan:
+1. Infer the timeline of mentioned papers. Mark anything that's potentially parallel.
+2. State some common methodologies.
+3. For each paper,
+3.1. State its unique idea(s), if you can already identify.'''
+# '''
+# 3.2. State its relation to my paper.'''
+'''
+3.2. Note any important info you still need for the purpose of writing the Related Work paragraph. If nothing is critically missing, skip.
+4. From the above, ask me three clarifying questions that critically help you with the literature review.
+5. I will answer.
+6. Revise the timeline.
+7. Write the paragraph.
+8. Idenitfy any assumptions you made beyond the factual information I gave you.
+9. Check your assumptions by searching the internet.
+
+In your next response, do steps 1 - 4.
+'''
+).strip() # use only for non-reasoning GPT models
+
+format_ = '''
+Citation style: write "~\\cite{insert_bib_hanle_here}" at the end of your sentence.
+Enclose your paragraph in a code block ("```latex").
+'''.strip()
+
+def prompt(stage: str):
+    return f'''
+Write a paragraph in the Related Work Section in my academic paper in music AI.
+
+Here is my paper:
+<my_paper>
+{ours[0]}
+{ours[1]}
+</my_paper>
+
+{dict(
+    understanding = 'In this paragraph, focus on music understanding.', 
+    grounding = 'In this paragraph, focus on LLM grounding. The last sentence should situate my work in the literature.', 
+)[stage]}
+
+{format_}
+
+Here are related papers you should integrate, containing title, bib_hanle, year, abstract (potentially multi-line), and optionally my comment:
+<related_papers>
+{papers[stage]}
+</related_papers>
+'''.strip()
+
+for stage in STAGES:
+    with open(f'prompt-{stage}.txt', 'w', encoding='utf-8') as f:
+        f.write(prompt(stage))
